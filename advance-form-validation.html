@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="Form.css" rel="stylesheet">
+</head>
+    <body>
+        <form id="myForm">
+            <label for="username">Username: </label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required>
+            <span class="error" id="usernameError"></span><br><br>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter email" required>
+            <span class="error" id="emailError"></span><br><br>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" title="Password must be between 6-8 characters" required>
+            <span class="error" id="passwordError"></span><br><br>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="secondPassword" name="password" placeholder="Re-enter 5password" required>
+            <span class="error" id="secondPasswordError"></span><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+        <script src="Form.js"></script>
+</body>
+</html>
