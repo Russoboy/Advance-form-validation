@@ -4,7 +4,7 @@ const usernameField = document.getElementById("username");
 const emailField = document.getElementById("email");
 const passwordField = document.getElementById("password");
 const confirmPasswordField = document.getElementById("secondPassword");
-
+const errorDisplay = document.getElementById("usernameError");
 // Real-Time Validation for each input
 
 // Validate Username
@@ -65,8 +65,26 @@ confirmPasswordField.addEventListener("input", () => {
     }
 });
 
-const blockedUsernamesList = ['root', 'test', 'admin', 'godfather']
-const accessBlockedUsernamesList = 
+const blockedUsernamesList = ["root", "test", "admin", "godfather", "sex", "nazi", "nigga", "blackface", "fuck"]
+
+usernameField.addEventListener("input", () =>{
+    const inputValue = usernameField.value.toLowerCase();
+    let hasBlockedWord = false;
+
+    blockedUsernamesList.forEach(word => {
+        if (inputValue.includes(word)) {
+            hasBlockedWord = true;
+        }
+    });
+
+    if (hasBlockedWord) {
+        errorDisplay.textContent = "Your input contains a blocked word. Please remove it.";
+        document.getElementById("usernameError").style.borderColor = "red";
+    } else {
+        errorDisplay.textContent = "";
+        document.getElementById("usernameError").style.borderColor = "#ccc";
+    }
+})
 
 // Form submission validation
 form.addEventListener("submit", function(event) {
